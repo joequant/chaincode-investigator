@@ -8,6 +8,9 @@ Now you can invoke/query chaincode directly from this web app.
 It also has the ability to record and remember query/invoke sequences.
 This allows for rapid testing of a complex flow.
 
+### Deployment Tracking
+Tracking numbers helps us judge interest. If you wish you may remove deployment tracking by deleting the 'Deployment Tracking' section towards the bottom app.js.
+
 ##Install
 1. First up we need to install our dependencies. Open a command prompt/terminal and browse to the root of this project.
 1. In the command prompt type:
@@ -25,108 +28,142 @@ This allows for rapid testing of a complex flow.
 	```
 	----------------------- Server Up - localhost:3001 -----------------------
 	```
-	
-1. Open your favorite browser and go to [http://localhost:3001](http://localhost:3001)
-
 ***
 
-**A full tutorial is coming soon!** 
-Until then you can try my network/example below. 
-This is a working format that you can paste into the text area that appears when you click "Create Chaincode JSON Summary".
+##Tutorial Steps
+1. Open your favorite browser and go to [http://localhost:3001](http://localhost:3001)
+2. You should see CCI's UI as seen below. Click the "Load" panel to expand it.
 
-Of course you can modify it to fit your own network. 
-You will find similar information about your own network from the service's Bluemix dashboard in the "Service Credentials" tab.
+	![start](/imgs/1_start.png)
 
-```
-{
-    "network": {
-        "peers": [
-            {
-                "name": "vp1-95fb4294-d05...:443",
-                "api_host": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1-api.blockchain.ibm.com",
-                "api_port": 80,
-                "api_port_tls": 443,
-                "id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1",
-                "tls": true,
-                "enrollID": "user_type1_fd818482a0",
-                "api_url": "http://95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1-api.blockchain.ibm.com:80"
-            },
-            {
-                "name": "vp2-95fb4294-d05...:443",
-                "api_host": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2-api.blockchain.ibm.com",
-                "api_port": 80,
-                "api_port_tls": 443,
-                "id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2",
-                "tls": true,
-                "enrollID": "user_type1_93c0c7bc9e",
-                "api_url": "http://95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2-api.blockchain.ibm.com:80"
-            }
-        ],
-        "users": [
-            {
-                "username": "user_type1_fd818482a0",
-                "secret": "d5d1a2cd27",
-                "enrollId": "user_type1_fd818482a0",
-                "enrollSecret": "d5d1a2cd27"
-            },
-            {
-                "username": "user_type1_93c0c7bc9e",
-                "secret": "7fcd7a2d53",
-                "enrollId": "user_type1_93c0c7bc9e",
-                "enrollSecret": "7fcd7a2d53"
-            },
-            {
-                "username": "user_type1_3aa39ba81d",
-                "secret": "82f211728e",
-                "enrollId": "user_type1_3aa39ba81d",
-                "enrollSecret": "82f211728e"
-            },
-            {
-                "username": "user_type1_763a40ba66",
-                "secret": "711761f28f",
-                "enrollId": "user_type1_763a40ba66",
-                "enrollSecret": "711761f28f"
-            },
-            {
-                "username": "user_type1_bb6cd75403",
-                "secret": "c2f111c2cd",
-                "enrollId": "user_type1_bb6cd75403",
-                "enrollSecret": "c2f111c2cd"
-            }
-        ]
-    },
-    "chaincode": {
-        "zip_url": "https://github.com/ibm-blockchain/marbles-chaincode/archive/master.zip",
-        "unzip_dir": "marbles-chaincode-master/hyperledger/part2",
-        "git_url": "https://github.com/ibm-blockchain/marbles-chaincode/hyperledger/part2"
-    }
-}
-```
-		
-### Deployment Tracking
-Tracking numbers helps us judge interest. If you wish you may remove deployment tracking by deleting the 'Deployment Tracking' section towards the bottom app.js.
+3. Now copy and paste the example JSON below into the textarea that appeared
+	- Of course you can modify it to fit your own network and chaincode
+	- The json needs to follow the format defined in our SDK for the function `ibc.load()` - [documentation](https://github.com/IBM-Blockchain/ibm-blockchain-js#ibcjs)
+	- You will find your own blockchain network information from the service's Bluemix dashboard in the "Service Credentials" tab
 
-## ToDos:
-- [ ] CCI video
-- [x] redesign CCI
-- [x] move cci into its own repo
-- [x] use the sdk to deploy
-- [x] auto size nav
-- [x] allow user to set what function he wants called in deploy
-- [x] load spin when deploying
-- [x] better naming of chaincode summary icons
-- [x] clear button in log panel
-- [x] ability to record api flows and save into local memory
-- [x] move test/playback to under cc summary
-- [x] naming/renaming recordings is awkward
-- [ ] rename cc summary, auto populates as is with cc repo name, but user can override
-- [x] add helpful UI hints for user error/success paths (highlight invalid inputs, buttons, valid buttons)
-- [x] collapse all on initial load, show logs when use executes chaincode
-- [x] super input parser
-- [x] sdk v1+ transition
-- [x] hyperleder transition
-- [x] create publc repo
-- [ ] create detailed tutorial
-- [x] cf tracking
-- [ ] move tests out from under a single deployed chaincode, make them either global or maybe organize them under the same github repo
-- [ ] ability to see peer and enrollID relations for all known enrollIDs
+	```
+	{
+		"network": {
+			"peers": [
+				{
+					"name": "vp1-95fb4294-d05...:443",
+					"api_host": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1-api.blockchain.ibm.com",
+					"api_port": 80,
+					"api_port_tls": 443,
+					"id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1",
+					"tls": true,
+					"enrollID": "user_type1_fd818482a0",
+					"api_url": "http://95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1-api.blockchain.ibm.com:80"
+				},
+				{
+					"name": "vp2-95fb4294-d05...:443",
+					"api_host": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2-api.blockchain.ibm.com",
+					"api_port": 80,
+					"api_port_tls": 443,
+					"id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2",
+					"tls": true,
+					"enrollID": "user_type1_93c0c7bc9e",
+					"api_url": "http://95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2-api.blockchain.ibm.com:80"
+				}
+			],
+			"users": [
+				{
+					"username": "user_type1_fd818482a0",
+					"secret": "d5d1a2cd27",
+					"enrollId": "user_type1_fd818482a0",
+					"enrollSecret": "d5d1a2cd27"
+				},
+				{
+					"username": "user_type1_93c0c7bc9e",
+					"secret": "7fcd7a2d53",
+					"enrollId": "user_type1_93c0c7bc9e",
+					"enrollSecret": "7fcd7a2d53"
+				},
+				{
+					"username": "user_type1_3aa39ba81d",
+					"secret": "82f211728e",
+					"enrollId": "user_type1_3aa39ba81d",
+					"enrollSecret": "82f211728e"
+				},
+				{
+					"username": "user_type1_763a40ba66",
+					"secret": "711761f28f",
+					"enrollId": "user_type1_763a40ba66",
+					"enrollSecret": "711761f28f"
+				},
+				{
+					"username": "user_type1_bb6cd75403",
+					"secret": "c2f111c2cd",
+					"enrollId": "user_type1_bb6cd75403",
+					"enrollSecret": "c2f111c2cd"
+				}
+			]
+		},
+		"chaincode": {
+			"zip_url": "https://github.com/ibm-blockchain/marbles-chaincode/archive/master.zip",
+			"unzip_dir": "marbles-chaincode-master/hyperledger/part2",
+			"git_url": "https://github.com/ibm-blockchain/marbles-chaincode/hyperledger/part2"
+		}
+	}
+	```
+
+	![](/imgs/2_load.png)
+	
+1. In addition to the json you need to set the "Deploy Function" name and argument field (see example above)
+	- This is the name of the chaincode function that will be called immediately after the chaincode is deployed
+1. Finally click the "Send to SDK" button
+1. This will take approximately 1.5 minutes and then a new chaincode summary icon will appear as seen below.
+
+	![](/imgs/3_load.png) 
+	
+1. Click the chaincode summary icon labeled "part2" to load this cc
+1. The "Chaincode" panel should have expanded reveling your chaincode functions (these were parsed by the SDK)
+
+	![](/imgs/4_chaincode.png)
+	
+1. Next lets query the current cc state for the value of `abc`. Simply type "abc" into the "Query - read([])" input box like below then click the "Run ->" button.
+	- this `abc` variable was created in our cc's `Init()` chaincode function
+	- you can change the peer we query against by expanding the "Network" button and selecting a different peer
+	- the "Run All" button will query against all known peers in the network unlike the "Run" button which queries against a single selected peer
+	
+	![](/imgs/5_chaincode.png)
+	
+1. The log panel should have expanded showing you the results of the query.  The variable `abc` now has the value `"hello_there"`.
+1. Next lets change the chaincode state of this variable with our `write()` function. Use the "Invoke - write()" by typing `abc, 101` and clicking "Run ->"
+	
+	![](/imgs/6_chaincode.png)
+	
+1. Verify that the value changed by sending another query to `abc`
+
+That’s it!
+
+
+##Panels
+
+###Load
+This panel is where you can load new chaincode into CCI. 
+You can control whether or not chaincode is deployed by omitting or setting the chaincode.deployed_name field. 
+If chaincode.depolyed_name is null CCI will deploy the chaincode against vp1. 
+Past cc's that were parsed by the tool will be remembered and listed in this panel (they are saved to your browser's memory, so you will need to use the same browser) 
+You can remove them by clicking the small "X".
+ 
+###Network
+This panel allows you to set which peer and enrollID to run your query or invoke against. 
+The SDK will have registered 1 enrollID per peer during deployment. 
+By default, selecting a new peer will also select its registered user. 
+
+###Tests
+In this panel you can create repeatable tests. 
+Click the start button to start recording then use the chaincode panel to send API requests. 
+Each test will be recorded. 
+To save and end the test click the stop button. 
+This test will be recorded and can be played back to run complicated testing flows.
+
+###Chaincode
+This panel is where you can build up API requests to send. 
+The invoke and query functions should be listed for your selected chaincode. 
+The output of the functions can be found in the "Logs" panel.
+
+###Logs
+This panel shows the pretty printed JSON inputs/outputs of the invokes and queries. 
+The "x" in the right hand corner will clear the log panel.

@@ -1,0 +1,24 @@
+## ToDos:
+- [ ] CCI video
+- [x] redesign CCI
+- [x] move cci into its own repo
+- [x] use the sdk to deploy
+- [x] auto size nav
+- [x] allow user to set what function he wants called in deploy
+- [x] load spin when deploying
+- [x] better naming of chaincode summary icons
+- [x] clear button in log panel
+- [x] ability to record api flows and save into local memory
+- [x] move test/playback to under cc summary
+- [x] naming/renaming recordings is awkward
+- [ ] rename cc summary, auto populates as is with cc repo name, but user can override
+- [x] add helpful UI hints for user error/success paths (highlight invalid inputs, buttons, valid buttons)
+- [x] collapse all on initial load, show logs when use executes chaincode
+- [x] super input parser
+- [x] sdk v1+ transition
+- [x] hyperleder transition
+- [x] create publc repo
+- [ ] create detailed tutorial
+- [x] cf tracking
+- [ ] move tests out from under a single deployed chaincode, make them either global or maybe organize them under the same github repo
+- [ ] ability to see peer and enrollID relations for all known enrollIDs
