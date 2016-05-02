@@ -134,27 +134,32 @@ That’s it!
 ##Panels
 
 ###Load
-This panel is where you can load new chaincode into CCI. 
-You can control whether or not chaincode is deployed by omitting or setting the chaincode.deployed_name field. 
+This panel is where you can load new cc aka chaincode into CCI. 
+You can control whether or not cc is deployed by omitting or setting the chaincode.deployed_name field. 
 If chaincode.depolyed_name is null CCI will deploy the chaincode against vp1. 
 Past cc's that were parsed by the tool will be remembered and listed in this panel (they are saved to your browser's memory, so you will need to use the same browser) 
-You can remove them by clicking the small "X".
+You can remove them by clicking the small "x". 
+You must select a cc before you are able to use the rest of the tool. 
  
 ###Network
-This panel allows you to set which peer and enrollID to run your query or invoke against. 
+This panel allows you to set which peer tp run your query or invoke against and set its enrollID. 
 The SDK will have registered 1 enrollID per peer during deployment. 
 By default, selecting a new peer will also select its registered user. 
 
 ###Tests
-In this panel you can create repeatable tests. 
+In this panel you can create repeatable sequential tests. 
 Click the start button to start recording then use the chaincode panel to send API requests. 
-Each test will be recorded. 
-To save and end the test click the stop button. 
-This test will be recorded and can be played back to run complicated testing flows.
+Each requesy will be recorded. 
+To save and end the test, click the stop button. 
+This test will be recorded to your browser.  
+It can be played back at a later time to re-run your flow.
 
 ###Chaincode
 This panel is where you can build up API requests to send. 
-The invoke and query functions should be listed for your selected chaincode. 
+The invoke and query functions should be listed for your selected cc. 
+The "Run" button will run the request against the selected peer. 
+The "Run All" button will run the request against each peer in parallel. 
+This is mostly handy to verify that the peers are seeing the same state. 
 The output of the functions can be found in the "Logs" panel.
 
 ###Logs
