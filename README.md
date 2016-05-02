@@ -115,9 +115,9 @@ Tracking numbers helps us judge interest. If you wish you may remove deployment 
 	![](/imgs/4_chaincode.png)
 	
 1. Next lets query the current cc state for the value of `abc`. Simply type "abc" into the "Query - read([])" input box like below then click the "Run ->" button.
-	- this `abc` variable was created in our cc's `Init()` chaincode function
-	- you can change the peer we query against by expanding the "Network" button and selecting a different peer
-	- the "Run All" button will query against all known peers in the network unlike the "Run" button which queries against a single selected peer
+	- This `abc` variable was created in our cc's `Init()` chaincode function
+	- You can change the peer we query against by expanding the "Network" button and selecting a different peer
+	- The "Run All" button will query against all known peers in the network unlike the "Run" button which queries against a single selected peer
 	
 	![](/imgs/5_chaincode.png)
 	
