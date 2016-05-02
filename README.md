@@ -46,24 +46,16 @@ Tracking numbers helps us judge interest. If you wish you may remove deployment 
 		"network": {
 			"peers": [
 				{
-					"name": "vp1-95fb4294-d05...:443",
 					"api_host": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1-api.blockchain.ibm.com",
 					"api_port": 80,
 					"api_port_tls": 443,
-					"id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1",
-					"tls": true,
-					"enrollID": "user_type1_fd818482a0",
-					"api_url": "http://95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1-api.blockchain.ibm.com:80"
+					"id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp1"
 				},
 				{
-					"name": "vp2-95fb4294-d05...:443",
 					"api_host": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2-api.blockchain.ibm.com",
 					"api_port": 80,
 					"api_port_tls": 443,
-					"id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2",
-					"tls": true,
-					"enrollID": "user_type1_93c0c7bc9e",
-					"api_url": "http://95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2-api.blockchain.ibm.com:80"
+					"id": "95fb4294-d05a-4afa-bbcd-355c6d90d261_vp2"
 				}
 			],
 			"users": [
@@ -111,6 +103,7 @@ Tracking numbers helps us judge interest. If you wish you may remove deployment 
 	
 1. In addition to the json you need to set the "Deploy Function" name and argument field (see example above)
 	- This is the name of the chaincode function that will be called immediately after the chaincode is deployed
+
 1. Finally click the "Send to SDK" button
 1. This will take approximately 1.5 minutes and then a new chaincode summary icon will appear as seen below.
 
