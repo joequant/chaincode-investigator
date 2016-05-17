@@ -12,7 +12,7 @@ var router = express.Router();
 var setup = require('../setup.js');
 
 // Load our modules.
-var Ibc1 	= require('ibm-blockchain-js');
+var Ibc1 	= require('hyperledger-fabric-js');
 
 // ============================================================================================================================
 // Home
